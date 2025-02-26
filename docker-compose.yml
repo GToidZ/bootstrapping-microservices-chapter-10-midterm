@@ -185,3 +185,13 @@ services:
       - db
       - rabbit
     restart: "no"
+
+  advertise:
+    image: advertise
+    build:
+      context: ./advertise
+      dockerfile: Dockerfile
+    container_name: advertise
+    ports:
+      - "4007:80"
+    restart: "no"
