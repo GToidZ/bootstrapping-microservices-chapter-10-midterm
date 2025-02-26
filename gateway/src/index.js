@@ -101,6 +101,12 @@ async function main() {
         response.data.pipe(res);
     });
 
+    // Web page to advertisement links.
+    app.get("/advertise", async (req, res) => {
+        const response = await axios.get("http://advertise/links");
+        res.render("advertise", { advertisements: response.data });
+    });
+
     app.listen(PORT, () => {
         console.log("Microservice online.");
     });

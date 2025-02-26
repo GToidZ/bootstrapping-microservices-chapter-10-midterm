@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
 
-        <title>FlixTube: Home</title>
+        <title>FlixTube: Ads</title>
 
         <link rel="stylesheet" href="css/tailwind.min.css">
         <link rel="stylesheet" href="css/app.css">
@@ -15,7 +15,7 @@
                     <div class="text-xl font-bold">
                         FlixTube
                     </div>
-                    <div class="ml-16 border-b-2 border-blue-600">
+                    <div class="ml-16">
                         <a href="/">Videos</a>
                     </div>
                     <div class="ml-4">
@@ -29,18 +29,18 @@
                     </div>
                 </div>
             </div>
+        </div>
 
+        <div class="m-4">
+            <h1>Partner Ads</h1>
             <div class="m-4">
-                <h1>Videos</h1>
-                <div id="video-list" class="m-4">
-                    {{#if videos}}
-                        {{#each videos}}
+                <div id="ads" class="m-4">
+                    {{#if advertisements}}
+                        {{#each advertisements}}
                             <div class="mt-1">
-                                <a href="/video?id={{this._id}}">{{this.name}}</a> 
+                                <a href="/video?id={{this.url}}"><img alt="{{this.name}}" src="{{this.image_url}}"></a> 
                             </div>
                         {{/each}}
-                    {{else}}
-                        No videos uploaded yet.
                     {{/if}}
                 </div>
             </div>
